@@ -10,4 +10,8 @@ class Player
 	def take_damage
 		@hp -= DEFAULT_ATTACK
 	end
+
+	def dead?
+		@hp <= 0
+	end
 end

@@ -78,3 +78,14 @@ feature 'Switching turns' do
     end
   end
 end
+
+feature 'Winning and losing' do
+  scenario 'player two loses' do
+    sign_in_and_play
+    19.times do
+      click_button('Attack!')
+      click_button('ok')
+    end
+    expect(page).to have_content("Alex Loses")
+  end
+end

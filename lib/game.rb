@@ -14,11 +14,14 @@ class Game
 		return nil
 	end
 
+	def loser
+		@loser = ([@player1, @player2].select { |x| x.dead? }.first)
+	end
+
 	private
 
 	def switch_turn
 		@awaiting_turn = @current_turn
 		@current_turn = (@current_turn == @player1 ? @player2 : player1)
 	end
-
 end

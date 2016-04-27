@@ -1,9 +1,10 @@
 require 'game'
 
 describe Game do
-	let(:player1) {double :player, take_damage: 90, name: "Joseph"}
-	let(:player2) {double :player, take_damage: 90, name: "Alex"}
-	subject(:game) {described_class.new(player1,player2)}
+	let(:player1)     {double :player, take_damage: 90, name: "Joseph", dead?: false}
+	let(:player2)     {double :player, take_damage: 90, name: "Alex"}
+	let(:dead_player) {double :player, dead?: true}
+	subject(:game)    {described_class.new(player1,player2)}
 
 	describe '#player1' do
 		it 'returns player1' do
@@ -38,6 +39,12 @@ describe Game do
 		it 'returns the player who is not active' do
 			expect(game.awaiting_turn). to eq (player2)
 		end
+	end
 
+	describe '#loser' do
+		subject(:lost_game) {described_class.new(player1,dead_player)}
+		it 'stores dead player in loser variable' do
+			expect(lost_game.loser).to eq dead_player
+		end
 	end
 end

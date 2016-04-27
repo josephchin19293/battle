@@ -1,6 +1,12 @@
 <%= @game.current_turn.name %> attacked <%= @game.awaiting_turn.name %>!
 <br>
 <%= @game.attack(@game.awaiting_turn) %>
-<form action="/play">
-  <input type='submit' value="ok" />
-</form>
+<% if @game.current_turn.dead? %>
+	<form action="/lose">
+	  <input type='submit' value="ok" />
+	</form>	
+<% else %>
+	<form action="/play">
+	  <input type='submit' value="ok" />
+	</form>
+<% end %>
