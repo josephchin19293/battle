@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-	let(:player1) {double :player, take_damage: 90}
-	let(:player2) {double :player, take_damage: 90}
+	let(:player1) {double :player, take_damage: 90, name: "Joseph"}
+	let(:player2) {double :player, take_damage: 90, name: "Alex"}
 	subject(:game) {described_class.new(player1,player2)}
 
 	describe '#player1' do
@@ -21,6 +21,17 @@ describe Game do
 		it 'calls :take_damage on the player' do
 			expect(player1).to receive(:take_damage)
 			game.attack(player1)
+		end
+	end
+
+	describe '#current_turn' do
+		it 'shows the name of the player whose turn it is' do
+			expect(game.current_turn).to eq(player1.name)
+		end
+
+		it 'changes player after an attack' do
+			game.attack(player2)
+			expect(game.current_turn).to eq(player2.name)
 		end
 	end
 end

@@ -2,7 +2,7 @@
 feature 'Enter names' do
   scenario "player one can submit name" do
     sign_in_and_play
-    expect(page).to have_text("Player One: Sity")
+    expect(page).to have_text("Player One: Joseph")
   end
 
   scenario "player two can submit name" do
@@ -28,7 +28,7 @@ feature 'Attack button' do
   scenario "player one can attack player two" do
     sign_in_and_play
     click_button('Attack!')
-    expect(page).to have_text("Sity attacked Alex!")
+    expect(page).to have_text("Joseph attacked Alex!")
   end
 
   scenario "player two's health is reduced when attacked" do
@@ -36,5 +36,22 @@ feature 'Attack button' do
     click_button('Attack!')
     click_button('ok')
     expect(page).to have_text("Player Two HP: 90")
+  end
+end
+
+feature 'Switching turns' do
+  context 'Seeing current turn' do
+    scenario 'beginning of game' do
+      sign_in_and_play
+      expect(page).to have_content "Joseph's turn"
+    end
+
+    scenario 'Swaps turns after an attack' do
+      sign_in_and_play
+      click_button('Attack!')
+      click_button('ok')
+      expect(page).not_to have_content "Joseph's turn"
+      expect(page).to have_content "Alex's turn"
+    end
   end
 end
