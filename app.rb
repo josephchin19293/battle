@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require 'player'
+require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -9,6 +10,7 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
+    $game = Game.new
     $player1 = Player.new(params[:player1_name])
     $player2 = Player.new(params[:player2_name])
     redirect '/play'
