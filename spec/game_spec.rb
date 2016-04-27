@@ -26,12 +26,18 @@ describe Game do
 
 	describe '#current_turn' do
 		it 'shows the name of the player whose turn it is' do
-			expect(game.current_turn).to eq(player1.name)
+			expect(game.current_turn).to eq(player1)
 		end
 
 		it 'changes player after an attack' do
 			game.attack(player2)
-			expect(game.current_turn).to eq(player2.name)
+			expect(game.current_turn).to eq(player2)
 		end
+	end
+	describe '#awaiting_turn' do
+		it 'returns the player who is not active' do
+			expect(game.awaiting_turn). to eq (player2)
+		end
+
 	end
 end

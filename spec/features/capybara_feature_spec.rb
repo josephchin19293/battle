@@ -25,18 +25,41 @@ feature 'Display hit points' do
 end
 
 feature 'Attack button' do
-  scenario "player one can attack player two" do
-    sign_in_and_play
-    click_button('Attack!')
-    expect(page).to have_text("Joseph attacked Alex!")
+  context 'Player 1s turn' do
+    scenario "player one can attack player two" do
+      sign_in_and_play
+      click_button('Attack!')
+      expect(page).to have_text("Joseph attacked Alex!")
+    end
+
+    scenario "player two's health is reduced when attacked" do
+      sign_in_and_play
+      click_button('Attack!')
+      click_button('ok')
+      expect(page).to have_text("Player Two HP: 90")
+    end
   end
 
-  scenario "player two's health is reduced when attacked" do
-    sign_in_and_play
-    click_button('Attack!')
-    click_button('ok')
-    expect(page).to have_text("Player Two HP: 90")
+  context 'Player 2s turn' do
+    scenario "player two can attack player one" do
+      sign_in_and_play
+      click_button('Attack!')
+      click_button('ok')
+      click_button('Attack!')
+      expect(page).to have_text("Alex attacked Joseph!")
+    end
+
+    scenario "player one's health is reduced when attacked" do
+      sign_in_and_play
+      click_button('Attack!')
+      click_button('ok')
+      click_button('Attack!')
+      click_button('ok')
+      expect(page).to have_text("Player One HP: 90")
+    end
   end
+
+
 end
 
 feature 'Switching turns' do
