@@ -1,6 +1,6 @@
-<%= $player1.name %> attacked <%= $player2.name %>!
+<%= @game.player1.name %> attacked <%= @game.player2.name %>!
 <br>
-Player Two HP: <%= $game.attack($player2) %>
+Player Two HP: <%= @game.attack(@game.player2) %>
 <form action="/play">
   <input type='submit' value="ok" />
 </form>
