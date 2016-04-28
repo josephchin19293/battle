@@ -1,15 +1,15 @@
 <body style="background-color:#FFDCB7; border: 3px solid black">
   <div style="text-align:center">
-<h1><%= @game.player_1.name %> attacked <%= @game.player_2.name %></h1>
-</div>
-<form action="/play" method="get">
-  <div style="width:100%;height:100%;position:absolute;vertical-align:middle;text-align:center;">
-  <input type="submit" value="OK">
-</form>
-</div>
-<div style="text-align:center;vertical-align:middle">
-<p><img src='https://media.giphy.com/media/pqRZWQdy0994I/giphy.gif'/></p>
-</div>
+    <h1><%= @game.active_player.name %> attacked <%= @game.defending_player.name %></h1>
+  </div>
+  <form action="/play" method="post">
+    <div style="width:100%;height:100%;position:absolute;vertical-align:middle;text-align:center;">
+      <input type="submit" value="OK">
+    </div>
+  </form>
+  <div style="text-align:center;vertical-align:middle">
+    <img src='https://media.giphy.com/media/pqRZWQdy0994I/giphy.gif'/>
+  </div>
 </body>
 
 

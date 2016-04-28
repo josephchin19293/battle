@@ -24,4 +24,27 @@ describe Game do
       subject.attack(player_2)
     end
   end
+
+  describe '#active_player' do
+    it 'defaults to player 1' do
+      expect(game.active_player).to eq player_1
+    end
+  end
+
+  describe '#defending_player' do
+    it 'defaults to player 2' do
+      expect(game.defending_player).to eq player_2
+    end
+  end
+
+  describe '#switch_turn' do
+    it 'switches the active player' do
+      game.switch_turn
+      expect(game.active_player).to eq player_2
+    end
+    it 'switches the defending player' do
+      game.switch_turn
+      expect(game.defending_player).to eq player_1
+    end
+  end
 end
