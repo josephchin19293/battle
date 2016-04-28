@@ -1,15 +1,15 @@
 <body style="background-color:#FFDCB7; border: 3px solid black">
   <iframe width="0" height="0" src="https://www.youtube.com/embed/J9d9UrK0Jsw?autoplay=1" frameborder="0" allowfullscreen></iframe>
   <div style="text-align:center">
-    <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+    <h1><%= @game.active_player.name %> vs. <%= @game.defending_player.name %></h1>
   </div>
   <div style="float:left">
-    <h3> <%= @game.player_1.name %>: <%= @game.player_1.hp %> HP</h3>
-    <img src='http://vignette1.wikia.nocookie.net/gameofthrones/images/6/61/The_children_Tyrion_with_Bow_S4.png/revision/latest?cb=20140616190514' width="300" height "225"/>
+    <h3> <%= @game.active_player.name %>: <%= @game.active_player.hp %> HP</h3>
+    <img src="<%= @game.active_player.image %>" width="300" height "225"/>
   </div>
   <div style="float:right">
-    <h3> <%= @game.player_2.name %>: <%= @game.player_2.hp %> HP</h3>
-    <img src='http://vignette4.wikia.nocookie.net/gameofthrones/images/c/c6/Cersei-lannister-lena-headey-helen-sloan.jpeg/revision/20120424220203' width="180" height "180"/>
+    <h3> <%= @game.defending_player.name %>: <%= @game.defending_player.hp %> HP</h3>
+    <img src="<%= @game.defending_player.image %>" width="180" height "180"/>
   </div>
   <form action="/attack" method="post">
     <div style="width:100%;height:100%;position:absolute;vertical-align:middle;text-align:center;">

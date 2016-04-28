@@ -4,14 +4,14 @@
     <h2>Sign in to play</h2>
 
     <form action="/names" method = "post">
-      <label for="player_1_name">
-        Player 1 Name:
-        <input type="text" name="player_1_name"/>
-      </label>
-      <label for="player_2_name">
-        Player 2 Name:
-        <input type="text" name="player_2_name"/>
-      </label>
+      <label for="player_1_name">Player 1 Name:</label>
+      <input type="text" name="player_1_name"/>
+      <input type="radio" name="player_1_image" value="tyrion" checked><img src="http://vignette1.wikia.nocookie.net/gameofthrones/images/6/61/The_children_Tyrion_with_Bow_S4.png/revision/latest?cb=20140616190514" width="180" height "180"/>
+      <input type="radio" name="player_1_image" value="cersei"><img src="http://vignette4.wikia.nocookie.net/gameofthrones/images/c/c6/Cersei-lannister-lena-headey-helen-sloan.jpeg/revision/20120424220203" width="180" height "180"/>
+      <label for="player_2_name">Player 2 Name:</label>
+      <input type="text" name="player_2_name"/>
+      <input type="radio" name="player_2_image" value="tyrion" checked><img src="http://vignette1.wikia.nocookie.net/gameofthrones/images/6/61/The_children_Tyrion_with_Bow_S4.png/revision/latest?cb=20140616190514" width="180" height "180"/>
+      <input type="radio" name="player_2_image" value="cersei"><img src="http://vignette4.wikia.nocookie.net/gameofthrones/images/c/c6/Cersei-lannister-lena-headey-helen-sloan.jpeg/revision/20120424220203" width="180" height "180"/>
       <input type="submit" value= "Submit"/>
     </form>
   </div>

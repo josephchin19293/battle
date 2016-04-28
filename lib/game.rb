@@ -13,14 +13,6 @@ class Game
     @active_player = player_1
   end
 
-  def player_1
-    @players.first
-  end
-
-  def player_2
-    @players.last
-  end
-
   def attack(player)
     player.receive_damage
   end
@@ -46,12 +38,12 @@ class Game
   end
 
   def game_over?
-    ! player_1.alive? || ! player_2.alive?
+    ! defending_player.alive? || ! active_player.alive?
   end
 
   private
   def non_active_player
-    @active_player == player_1 ? player_2 : player_1
+    @active_player == @players.first ? @players.last : @players.first
   end
 
 end
