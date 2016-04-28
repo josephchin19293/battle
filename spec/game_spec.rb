@@ -5,6 +5,7 @@ describe Game do
   let(:player_1) {double :player}
   let(:player_2) {double :player}
 
+
   describe '#player 1' do
     it 'retrieves first player' do
       expect(game.player_1).to eq player_1
@@ -17,11 +18,27 @@ describe Game do
     end
   end
 
-  describe 'attack' do
+  describe '#attack' do
 
     it 'damages the player' do
       expect(subject).to receive(:attack)
       subject.attack(player_2)
+    end
+  end
+
+  describe '#stab' do
+
+    it 'damages the player' do
+      expect(subject).to receive(:stab)
+      subject.stab(player_2)
+    end
+  end
+
+  describe '#pinch' do
+
+    it 'damages the player' do
+      expect(subject).to receive(:pinch)
+      subject.pinch(player_2)
     end
   end
 

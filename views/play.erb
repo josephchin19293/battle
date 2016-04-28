@@ -15,6 +15,12 @@
     <div style="width:100%;height:100%;position:absolute;vertical-align:middle;text-align:center;">
       <p><%= @game.active_player.name %>'s Turn</p>
       <input type="submit" value="Attack">
+    </form>
+    <form action="/stab" method="post">
+      <input type="submit" value="Stab">
+    </form>
+    <form action="/pinch" method="post">
+      <input type="submit" value="Pinch">
     </div>
   </form>
 </body>

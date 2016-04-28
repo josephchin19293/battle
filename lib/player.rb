@@ -9,8 +9,8 @@ class Player
 
   attr_reader :name, :hp
 
-  def receive_damage
-    @hp -= 10
+  def receive_damage(damage = 10)
+    @hp -= damage
   end
 
   def alive?

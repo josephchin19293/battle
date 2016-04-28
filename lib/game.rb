@@ -25,6 +25,14 @@ class Game
     player.receive_damage
   end
 
+  def pinch(player)
+    player.receive_damage(5)
+  end
+
+  def stab(player)
+    player.receive_damage(30)
+  end
+
   def active_player
     @active_player
   end

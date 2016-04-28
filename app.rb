@@ -42,6 +42,24 @@ class Battle < Sinatra::Base
     erb :attack
   end
 
+  post '/stab' do
+    @game.stab(@game.defending_player)
+    redirect '/stab'
+  end
+
+  get '/stab' do
+    erb :stab
+  end
+
+  post '/pinch' do
+    @game.pinch(@game.defending_player)
+    redirect '/pinch'
+  end
+
+  get '/pinch' do
+    erb :pinch
+  end
+
   get '/game-over' do
     erb :game_over
   end
