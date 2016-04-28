@@ -13,4 +13,7 @@ class Player
     @hp -= 10
   end
 
+  def alive?
+    @hp > 0
+  end
 end

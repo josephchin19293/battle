@@ -29,6 +29,10 @@ class Game
     @active_player = non_active_player
   end
 
+  def game_over?
+    ! player_1.alive? || ! player_2.alive?
+  end
+
   private
   def non_active_player
     @active_player == player_1 ? player_2 : player_1

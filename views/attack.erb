@@ -2,7 +2,7 @@
   <div style="text-align:center">
     <h1><%= @game.active_player.name %> attacked <%= @game.defending_player.name %></h1>
   </div>
-  <form action="/play" method="post">
+  <form action="/switch-turns" method="post">
     <div style="width:100%;height:100%;position:absolute;vertical-align:middle;text-align:center;">
       <input type="submit" value="OK">
     </div>
