@@ -5,6 +5,11 @@ body {
 	background-size: cover;
 }
 
+@font-face {
+    font-family: 'FF font';
+    src: url('http://www.urbanfonts.com/fonts/final_fantasy.htm');
+}
+
 #main {
   vertical-align: center;
 }
