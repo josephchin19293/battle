@@ -1,9 +1,14 @@
 @font-face {
-    font-family: 'FF font';
-    src: url('http://www.urbanfonts.com/fonts/final_fantasy.htm');
+  font-family:"Final Fantasy";
+  src: url("finalf.eot?") format("eot"), url("finalf.woff") format("woff"), url("finalf.ttf") format("truetype"), url("finalf.svg#New") format("svg");
+  font-weight:normal;
+  font-style:normal;
 }
 
-
 body {
-	
+  font-family: Final Fantasy;
+}
+
+.title {
+  font-size: 100px
 }
