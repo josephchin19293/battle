@@ -1,7 +1,7 @@
 class Game
 
   def self.create (player_1, player_2)
-   @game = Game.new player_1, player_2
+    @game = Game.new player_1, player_2
   end
 
   def self.last_instance
@@ -11,6 +11,7 @@ class Game
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
     @active_player = player_1
+    @player_images = { "tyrion" => "http://vignette1.wikia.nocookie.net/gameofthrones/images/6/61/The_children_Tyrion_with_Bow_S4.png/revision/latest?cb=20140616190514", "cersei" => "http://vignette4.wikia.nocookie.net/gameofthrones/images/c/c6/Cersei-lannister-lena-headey-helen-sloan.jpeg/revision/20120424220203" }
   end
 
   def attack(player)
