@@ -9,6 +9,10 @@ class Battle < Sinatra::Base
     erb :index
   end
 
+  get '/character-select' do
+    erb :character_select
+  end
+
   post '/names' do
     player_1 = Player.new(params[:player_1_name], params[:player_1_image])
     player_2 = Player.new(params[:player_2_name], params[:player_2_image])
@@ -63,6 +67,8 @@ class Battle < Sinatra::Base
   get '/game-over' do
     erb :game_over
   end
+
+
 
   # start the server if ruby files executed directly
   run! if app_file == $0
